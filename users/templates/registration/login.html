@@ -1,8 +1,18 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-    <form method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Update">
-    </form>
+    <div class="container">
+        <h1 style="text-align:center; margin: 2vw 5vh 10vh;">Travel Intinerary</h1>
+        <div class="row justify-content-center">
+            <div style="padding: 5vh 10vw;" class="jumbotron col-8">
+                <h3>Login</h3>
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" value="Update" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'trip',
     'users.apps.UsersConfig',
+
     'corsheaders',
     'rest_framework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -153,5 +155,5 @@ else:
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'users.CustomUser' # new
 LOGIN_REDIRECT_URL = 'index'
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
