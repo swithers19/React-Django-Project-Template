@@ -17,8 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from .router import router
 from trip.views import index
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('', index)
+    path('users/', include('users.urls')),
+    path('users/', include('django.contrib.auth.urls')),
+    path('', index, name='index'),
+
 ]
