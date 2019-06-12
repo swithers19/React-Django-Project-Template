@@ -24,7 +24,7 @@ SECRET_KEY = 'h9s33#kz!cjf#h=bepvwdd10f$7w9)=slne4nndd!isr&i=2d-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEVMODE = False
+DEVMODE = True
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'trip',
     'users.apps.UsersConfig',
 
@@ -64,7 +65,7 @@ if DEVMODE:
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [],
+            'DIRS': [os.path.join(BASE_DIR, 'frontend', 'build')],
             'APP_DIRS': True,
             'OPTIONS': {
                 'context_processors': [
@@ -80,7 +81,7 @@ else:
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [os.path.join(BASE_DIR, 'frontend')],
+            'DIRS': [os.path.join(BASE_DIR, 'frontend', 'build')],
             'APP_DIRS': True,
             'OPTIONS': {
                 'context_processors': [
@@ -153,7 +154,7 @@ else:
 
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'users.CustomUser' # new
+AUTH_USER_MODEL = 'users.CustomUser' 
 LOGIN_REDIRECT_URL = 'index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

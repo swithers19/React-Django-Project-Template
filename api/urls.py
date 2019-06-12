@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .router import router
-from trip.views import index
-
+from trip.views import index, post_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +24,5 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('', index, name='index'),
-
+    path('list-posts/', post_list)
 ]
