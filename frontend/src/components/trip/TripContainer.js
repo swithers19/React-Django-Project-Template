@@ -29,7 +29,6 @@ export default class TripContainer extends React.Component {
           <div className='row' style={{marginTop:'40px'}}>
           {this.state.trips.map((trip, index) => (
             <Trip key={index} trip={trip}></Trip>
-            
           ))}
         </div>
       );

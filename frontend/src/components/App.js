@@ -16,9 +16,9 @@ class App extends Component {
           <header className="App-he">
             <Nav>Hello</Nav>
           </header>
-          <div className='container-fluid'>
-            <Route path="/Europe" exact component={DestinationContainer} />
+          <div className='container'>
             <Route path="/" exact component={TripContainer} />
+            <Route path={`/:id`} component={DestinationContainer} />
           </div>
         </div>
       </Router>
